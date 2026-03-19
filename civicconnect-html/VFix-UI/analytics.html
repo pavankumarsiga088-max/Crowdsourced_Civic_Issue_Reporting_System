@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CivicConnect - Analytics</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="brand">📊 Analytics <span class="muted small">Track disaster response effectiveness</span></div>
+      <nav>
+  <a class="active" href="ai.html">AI Assistant</a>
+  <a href="report.html">Report Issue</a>
+  <a href="analytics.html">Analytics</a>
+  <a href="#" id="logoutBtn">Logout</a>
+</nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Key Metrics -->
+    <div class="grid2">
+      <div class="card">
+        <p class="muted small" style="margin:0;">Total Reports</p>
+        <h2 style="margin:6px 0 0; font-weight:900;">312</h2>
+        <p style="margin:8px 0 0; color:#16a34a; font-weight:800; font-size:12px;">
+          +20% from last month
+        </p>
+      </div>
+
+      <div class="card">
+        <p class="muted small" style="margin:0;">Resolved</p>
+        <h2 style="margin:6px 0 0; font-weight:900;">227</h2>
+        <p style="margin:8px 0 0; color:#2563eb; font-weight:800; font-size:12px;">
+          73% success rate
+        </p>
+      </div>
+    </div>
+
+    <div style="height:16px;"></div>
+
+    <!-- Pie Charts -->
+    <div class="grid2">
+      <div class="card">
+        <h3 class="sectionTitle">Reports by Disaster Category (Pie)</h3>
+        <p class="sectionSub">Distribution of reports across disaster types</p>
+        <div class="chartBox">
+          <canvas id="categoryPie"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="sectionTitle">Status Distribution (Pie)</h3>
+        <p class="sectionSub">Percentage split of reports by status</p>
+        <div class="chartBox">
+          <canvas id="statusPie"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:16px;"></div>
+
+    <!-- Bar chart -->
+    <div class="card">
+      <h3 class="sectionTitle">Monthly Report Trends (Bar)</h3>
+      <p class="sectionSub">Resolved vs Pending reports over the last 4 months</p>
+      <div class="chartBox">
+        <canvas id="monthlyBar"></canvas>
+      </div>
+    </div>
+
+    <div style="height:16px;"></div>
+
+    <!-- Line Charts -->
+    <div class="card">
+      <h3 class="sectionTitle">Category Performance Over Time (Line)</h3>
+      <p class="sectionSub">Monthly performance score for each category</p>
+      <div class="chartBox">
+        <canvas id="categoryLine"></canvas>
+      </div>
+    </div>
+
+    <div style="height:16px;"></div>
+
+    <div class="card">
+      <h3 class="sectionTitle">Average Response Time Trend (Line)</h3>
+      <p class="sectionSub">Response time (hours) improved month by month</p>
+      <div class="chartBox">
+        <canvas id="responseLine"></canvas>
+      </div>
+
+      <div class="card" style="margin-top:12px; background:#ecfdf5; border:1px solid #bbf7d0;">
+        <p style="margin:0; font-weight:900; color:#15803d;">
+          📈 Response time improved by 26% this quarter
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/auth.js"></script>
+<script>
+  protectPage("citizen"); 
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CivicConnect - Report Issue</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="brand">📷 Report Issue <span class="muted small">Submit issue with proof</span></div>
+      <nav>
+  <a class="active" href="ai.html">AI Assistant</a>
+  <a href="report.html">Report Issue</a>
+  <a href="analytics.html">Analytics</a>
+  <a href="#" id="logoutBtn">Logout</a>
+</nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2 style="margin:0;">Report Issue</h2>
+      <p class="muted small" style="margin-top:6px;">
+        Follow the steps to upload photo, confirm location and submit the issue.
+      </p>
+
+      <!-- Progress -->
+      <div class="progressWrap" id="progressWrap">
+        <div class="progressTop">
+          <span id="stepText">Step 1 of 3</span>
+          <span id="stepPercent">33%</span>
+        </div>
+        <div class="progressBar">
+          <div class="progressFill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <section class="step active" id="step1">
+        <div class="center">
+          <div class="circle">📷</div>
+          <h3>Take a Photo</h3>
+          <p class="muted">
+            Capture or upload an image of the issue to help authorities understand the problem better.
+          </p>
+
+          <button class="btn primary full" id="takePhotoBtn">Take Photo</button>
+          <button class="btn outline full" id="uploadBtn" style="margin-top:10px;">Upload Image</button>
+
+          <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
+          <input id="uploadInput" type="file" accept="image/*" hidden />
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="step" id="step2">
+        <h3>Confirm Location</h3>
+
+        <img id="previewImg" class="preview" alt="Captured issue"/>
+
+        <div class="card" style="border:2px dashed #bbf7d0;">
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="font-size:20px;">📍</div>
+            <div style="flex:1;">
+              <p style="margin:0; font-weight:900; color:#16a34a;">Current Location</p>
+              <p class="muted small" style="margin:4px 0 0;" id="locationText">
+                Main Street, Downtown Area
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn primary full" id="continueBtn">Continue</button>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="step" id="step3">
+        <h3>Issue Details</h3>
+
+        <div class="error" id="errorBox"></div>
+
+        <div style="display:grid; gap:12px; margin-top:14px;">
+          <label style="font-weight:900; font-size:13px;">
+            Issue Title *
+            <input id="titleInput" type="text" placeholder="Brief title for the issue"
+              style="width:100%; padding:12px; border-radius:14px; border:1px solid #e5e7eb; margin-top:6px;" />
+          </label>
+
+          <label style="font-weight:900; font-size:13px;">
+            Category *
+            <select id="categorySelect"
+              style="width:100%; padding:12px; border-radius:14px; border:1px solid #e5e7eb; margin-top:6px;">
+              <option value="">Select issue category</option>
+              <option value="waste">Waste/Garbage</option>
+              <option value="pothole">Pothole</option>
+              <option value="water">Water Supply</option>
+              <option value="streetlight">Streetlight</option>
+              <option value="pollution">Pollution</option>
+            </select>
+          </label>
+
+          <label style="font-weight:900; font-size:13px;">
+            Urgency Level *
+            <select id="urgencySelect"
+              style="width:100%; padding:12px; border-radius:14px; border:1px solid #e5e7eb; margin-top:6px;">
+              <option value="">Select urgency level</option>
+              <option value="low">Low - Can wait a few days</option>
+              <option value="medium">Medium - Needs attention soon</option>
+              <option value="high">High - Urgent issue</option>
+              <option value="emergency">Emergency - Immediate action needed</option>
+            </select>
+          </label>
+
+          <label style="font-weight:900; font-size:13px;">
+            Description (Optional)
+            <textarea id="descInput" rows="4" placeholder="Briefly describe the issue..."
+              style="width:100%; padding:12px; border-radius:14px; border:1px solid #e5e7eb; margin-top:6px;"></textarea>
+          </label>
+        </div>
+
+        <button class="btn primary full" id="submitBtn" style="margin-top:14px;">
+          Submit Report
+        </button>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="step" id="step4">
+        <div class="center">
+          <div class="circle">✅</div>
+          <h3 style="color:#16a34a;">Report Submitted!</h3>
+          <p class="muted">Your complaint has been successfully submitted.</p>
+
+          <div class="card" style="background:#ecfdf5; border:1px solid #bbf7d0;">
+            <p style="margin:0;"><strong>Complaint ID:</strong> <span id="complaintId"></span></p>
+            <p class="muted small" style="margin-top:8px;">
+              Your complaint has been received by <strong id="deptName"></strong>
+            </p>
+          </div>
+
+          <div class="card" style="background:#eff6ff; border:1px solid #bfdbfe;">
+            <p class="small" style="margin:0;">You will receive updates on this complaint via notifications.</p>
+          </div>
+
+          <p class="muted small">Redirecting back to Step 1 in 3 seconds...</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/report.js"></script>
+  <script src="js/auth.js"></script>
+<script>
+  protectPage("citizen"); 
+</script>
+</body>
+</html>

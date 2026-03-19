@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CivicConnect Login</title>
+
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo">🔒 CivicConnect Login</div>
+  </header>
+
+  <!-- LOGIN CARD -->
+  <main class="wrapper">
+    <div class="card">
+      <h1>Welcome</h1>
+
+      <p class="subtext">
+        Login to access the platform. Admin IDs must start with <b>ADM-</b>
+      </p>
+
+      <!-- FORM -->
+      <div class="form">
+
+        <label>User ID <span>*</span></label>
+        <input id="userId" type="text" placeholder="Example: ADM-001 or CIT-123" />
+
+        <label>Name (optional)</label>
+        <input id="userName" type="text" placeholder="Your Name" />
+
+        <label>Phone (optional)</label>
+        <input id="userPhone" type="text" placeholder="Your Phone" />
+
+        <p id="loginError" class="error"></p>
+
+        <button id="loginBtn">Login</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script>
+    initLoginPage();   // this calls login function from auth.js
+  </script>
+
+</body>
+</html>

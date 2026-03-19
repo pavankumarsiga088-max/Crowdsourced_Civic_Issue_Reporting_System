@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citizen Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="css/complaints.css">
+
+
+  <!-- ✅ REQUIRED for analytics charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="protectPage('citizen')">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="icon">👤</span>
+      <h1>Citizen Dashboard</h1>
+      <span id="welcomeUser" class="welcome">Welcome citizen</span>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-btn" data-page="home" onclick="showPage('home')">Home</button>
+      <button class="nav-btn" data-page="ai" onclick="showPage('ai')">AI Assistant</button>
+      <button class="nav-btn" data-page="report" onclick="showPage('report')">Report Issue</button>
+      <button class="nav-btn" data-page="analytics" onclick="showPage('analytics')">Analytics</button>
+      <button class="nav-btn" onclick="showPage('profile')">Profile</button>
+      <button onclick="showPage('complaints')">My Complaints</button>
+
+
+
+      <button id="logoutBtn" class="nav-btn logout">Logout</button>
+    </nav>
+  </header>
+
+  <!-- This is where pages load -->
+  <main class="main">
+    <div id="pageContent"></div>
+  </main>
+
+<script src="js/auth.js"></script>
+<script src="js/home.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/report.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/complaints.js"></script>
+<script src="js/citizen.js"></script>
+
+
+
+  <!-- ✅ Only for welcome user display -->
+  <script>
+    const user = JSON.parse(localStorage.getItem("userInfo") || "null");
+    if (user) {
+      document.getElementById("welcomeUser").textContent = "Welcome " + user.id;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CivicConnect - AI Assistant</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="brand">🤖 AI Assistant <span class="muted small">Your civic engagement guide</span></div>
+      <nav>
+  <a class="active" href="ai.html">AI Assistant</a>
+  <a href="report.html">Report Issue</a>
+  <a href="analytics.html">Analytics</a>
+  <a href="#" id="logoutBtn">Logout</a>
+</nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2 style="margin-top:0;">Quick Help</h2>
+      <div style="display:grid; gap:10px;">
+        <button class="btn outline" data-q="Report Guidelines">📋 Report Guidelines</button>
+        <button class="btn outline" data-q="Nearby Issues">📍 Nearby Issues</button>
+        <button class="btn outline" data-q="Department Contacts">📞 Department Contacts</button>
+        <button class="btn outline" data-q="Community Initiatives">🌟 Community Initiatives</button>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="card">
+      <div id="chatBox" class="chatBox"></div>
+
+      <div class="inputRow">
+        <input id="chatInput" placeholder="Ask about civic issues, reporting, or community..." />
+        <button class="btn primary" id="sendBtn">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/ai.js"></script>
+  <script src="js/auth.js"></script>
+<script>
+  protectPage("citizen"); 
+</script>
+<script src="js/ai.js"></script>
+
+<script src="js/auth.js"></script>
+<script>
+  protectPage("citizen");
+</script>
+
+</body>
+</html>

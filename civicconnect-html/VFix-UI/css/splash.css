@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.splash {
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.splash img {
+  width: 180px;
+}
+
+.app-name {
+  margin-top: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.loader {
+  margin: 20px auto 0;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #c8e6c9;
+  border-top: 4px solid #2e7d32;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.login-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f7f5;
+}
+
+/* top green bar */
+.topbar {
+  background: #0f9d44;
+  color: white;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* center page */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+/* white login card */
+.card {
+  width: 520px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.subtext {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* form */
+.form {
+  margin-top: 25px;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+label span {
+  color: red;
+}
+
+input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #0f9d44;
+}
+
+/* error */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 15px;
+  display: none;
+}
+
+/* login btn */
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #0f9d44;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0b7e35;
+}
