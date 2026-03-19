@@ -1,6 +1,6 @@
 # VFix – Crowdsourced Civic Issue Reporting System
-VFix is a web-based civic issue reporting platform that enables citizens to report, track, and monitor public issues such as potholes, garbage overflow, sewage leaks, and streetlight failures. The system aims to improve communication between citizens and local authorities for faster and more transparent issue resolution.
----
+**VFix is a web-based civic issue reporting platform that enables citizens to report, track, and monitor public issues such as potholes, garbage overflow, sewage leaks, and streetlight failures. The system aims to improve communication between citizens and local authorities for faster and more transparent issue resolution.
+**---
 ## Features
 ### Citizen Module
 - Report civic issues with images and descriptions
